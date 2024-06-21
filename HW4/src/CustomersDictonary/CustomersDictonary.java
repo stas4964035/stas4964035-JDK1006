@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 public class CustomersDictonary {
     private static List<Customer> customers = new ArrayList<Customer>();
-    private static int id = 1;
+    private static int id = 0;
 
     public static void addCustomer(String phone, String name, int exp) {
         customers.add(new Customer(++id, phone, name, exp));

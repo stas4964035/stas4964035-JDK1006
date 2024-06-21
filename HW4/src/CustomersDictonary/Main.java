@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        CustomersDictonary dict = new CustomersDictonary();
+
         CustomersDictonary.addCustomer("123", "Ivan", 5);
         CustomersDictonary.addCustomer("678", "Ivan", 3);
         CustomersDictonary.addCustomer("456", "Petr", 2);
