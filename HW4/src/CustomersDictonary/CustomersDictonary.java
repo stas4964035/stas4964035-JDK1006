@@ -3,6 +3,7 @@ package CustomersDictonary;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CustomersDictonary {
@@ -22,13 +23,10 @@ public class CustomersDictonary {
     }
 
     public static List<String> getPhonesByName(String name) {
-        List<String> phones = new ArrayList<>();
-        for (Customer customer : customers) {
-            if (customer.getPhoneByName(name) != null) {
-                phones.add(customer.getPhoneByName(name));
-            }
-        }
-        return phones;
+        return customers.stream()
+                .filter(customer -> customer.name() == name)
+                .map(Customer::phone)
+                .toList();
     }
 
     public static List<String> getPhonesByName(String[] names) {
