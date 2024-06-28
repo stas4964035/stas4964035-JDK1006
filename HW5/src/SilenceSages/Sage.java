@@ -41,7 +41,7 @@ public class Sage extends Thread {
 
     private boolean takeSpoons() {
         synchronized (spoons) {
-            if (spoons[right]) {
+            if (spoons[right] && spoons[left]) {
                 spoons[right] = false;
                 spoons[left] = false;
                 System.out.printf("%s take spoons\n", name);
