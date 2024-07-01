@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group = 'ru.k44'
+version = '1.0-SNAPSHOT'
+
+jar{
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.34'
+
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-math3
+    implementation group: 'org.apache.commons', name: 'commons-math3', version: '3.6.1'
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+wrapper {
+    gradleVersion("8.5")
+}
